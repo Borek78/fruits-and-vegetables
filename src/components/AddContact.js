@@ -1,19 +1,16 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 function AddContact(props) {
   const [contact, setContact] = useState({ name: "", email: "" });
-  const navigate = useNavigate();
 
-  async function add(e) {
+  function add(e) {
     e.preventDefault();
 
     if (contact.name === "" || contact.email === "") {
-      alert("All the fields are MANDATORY");
+      alert("All the field are MANDATORY");
     }
 
-    await props.addContactHandler(contact);
-    navigate("/");
+    props.addContactHandler(contact);
   }
 
   return (
