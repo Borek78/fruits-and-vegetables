@@ -1,26 +1,19 @@
 {
   "contacts": [
     {
-      "id": "24343890-2918-4631-9f4f-7605f1499435",
-      "name": "Borek",
-      "email": "Borek@gmail.com"
+      "id": "71931957-9183-42af-9bf6-41bad62b7a48",
+      "name": "mama",
+      "email": "mama@gmail.com"
     },
     {
-      "id": "e81b2ba6-c289-49f6-be52-cf61a89cfb85",
+      "id": "14c17465-1c03-4859-b788-5dc78e06a2a3",
+      "name": "mipa",
+      "email": "mipa@gmail.com"
+    },
+    {
+      "id": "c2d2548c-1121-4a8b-ab54-879119da1409",
       "name": "tim",
       "email": "tim@gmail.com"
-    },
-    {
-      "id": "0ecfaa63-3fb2-4989-98e0-d8e9566cc957",
-      "name": "facebook",
-      "email": "facebook@gmail.com"
-    }
-  ],
-  "contacts2": [
-    {
-      "id": "2ab22fb1-280c-4a19-9cc1-c8745577f82e",
-      "name": "Jimmy",
-      "email": "Jimmy@gmail.com"
     }
   ]
 }

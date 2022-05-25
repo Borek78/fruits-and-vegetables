@@ -1,37 +1,50 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
-function AddContact(props) {
-  const [contact, setContact] = useState({ name: "", email: "" });
+function EditContact(props) {
   const navigate = useNavigate();
+  const location = useLocation();
+  const { contact } = location.state;
+  const { id, name, email } = contact;
+  const [updatedContact, updateContact] = useState({
+    id: id,
+    name: name,
+    email: email,
+  });
 
-  async function add(e) {
+  async function update(e) {
     e.preventDefault();
 
     if (contact.name === "" || contact.email === "") {
       alert("All the fields are MANDATORY");
     }
 
-    await props.addContactHandler(contact);
+    await props.updateContactHandler(updatedContact);
+
     navigate("/");
   }
 
   return (
     <div className="addcontact">
-      <h4>Add Contact</h4>
+      <h4>Edit Contact</h4>
       <br />
-      <form onSubmit={add}>
+      <form onSubmit={update}>
         <div className="name-and-email">
           <div className="name-in-contact-card">
             <label className="label" htmlFor="">
               Name
             </label>
             <input
+              value={updatedContact.name}
               className="input"
               placeholder="Name"
               type="text"
               onChange={(e) => {
-                setContact({ name: e.target.value, email: contact.email });
+                updateContact({
+                  id: id,
+                  name: e.target.value,
+                  email: updatedContact.email,
+                });
               }}
             />
           </div>
@@ -41,12 +54,14 @@ function AddContact(props) {
               Email
             </label>
             <input
+              value={updatedContact.email}
               className="input"
               placeholder="Email"
               type="text"
               onChange={(e) => {
-                setContact({
-                  name: contact.name,
+                updateContact({
+                  id: id,
+                  name: updatedContact.name,
                   email: e.target.value,
                 });
               }}
@@ -55,10 +70,10 @@ function AddContact(props) {
         </div>
         <br />
 
-        <button className="btn btn-primary">Add</button>
+        <button className="btn btn-primary">Update</button>
       </form>
     </div>
   );
 }
 
-export default AddContact;
+export default EditContact;
