@@ -82,6 +82,7 @@ function App() {
           .toLowerCase()
           .includes(a.toLowerCase());
       });
+      console.log(newContactList);
       setSearchResults(newContactList);
       console.log(searchResults);
     } else {
