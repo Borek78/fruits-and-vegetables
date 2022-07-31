@@ -1,19 +1,46 @@
 {
-  "contacts": [
+  "cart": [
     {
-      "id": "71931957-9183-42af-9bf6-41bad62b7a48",
-      "name": "mama",
-      "email": "mama@gmail.com"
-    },
-    {
-      "id": "14c17465-1c03-4859-b788-5dc78e06a2a3",
-      "name": "mipa",
-      "email": "mipa@gmail.com"
-    },
-    {
-      "id": "c2d2548c-1121-4a8b-ab54-879119da1409",
-      "name": "tim",
-      "email": "tim@gmail.com"
+      "itemsList": [
+        {
+          "id": 2,
+          "name": "Onion",
+          "price": 3,
+          "quantity": 16,
+          "totalPrice": 48
+        },
+        {
+          "id": 1,
+          "name": "Garlic",
+          "price": 9,
+          "quantity": 18,
+          "totalPrice": 162
+        },
+        {
+          "id": 3,
+          "name": "Carrot",
+          "price": 4,
+          "quantity": 5,
+          "totalPrice": 20
+        },
+        {
+          "id": 4,
+          "name": "Apple",
+          "price": 5,
+          "quantity": 1,
+          "totalPrice": 5
+        },
+        {
+          "id": 5,
+          "name": "Peach",
+          "price": 7,
+          "quantity": 1,
+          "totalPrice": 7
+        }
+      ],
+      "showCart": false,
+      "changed": true,
+      "id": 1
     }
   ]
 }

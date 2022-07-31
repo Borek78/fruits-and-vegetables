@@ -1,0 +1,170 @@
+.delivery-time-container .alert {
+  width: 20rem;
+  height: 5rem;
+
+  position: fixed;
+  top: 40%;
+  right: -20rem;
+
+  transition: 1s;
+
+  border-radius: 2rem;
+  font-size: 1.6rem;
+
+  color: white;
+  font-weight: bold;
+
+  background-color: chocolate;
+  display: inline;
+  text-align: center;
+  line-height: 5rem;
+}
+
+.delivery-time-container .show-alert {
+  right: -5rem;
+}
+
+.list-of-delivery-time-items {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(12, 5.2rem);
+}
+
+.delivery-time-container main.delivery-time {
+  margin-bottom: 6rem;
+  order: 3px solid rgb(246, 214, 132);
+  border-radius: 10px;
+  width: fit-content;
+  margin-inline: auto;
+  background-color: rgb(246, 214, 132);
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.delivery-time-container .delivery-day {
+  color: rgb(72, 173, 72);
+
+  font-size: 1.9rem;
+  padding: 0.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  border-radius: 1rem;
+  font-weight: bold;
+  border: 2px solid white;
+}
+
+main.delivery-time h2 {
+  font-size: 2.2rem;
+  text-align: center;
+  background-color: rgb(72, 173, 72);
+  color: white;
+  margin-bottom: 2.3rem;
+  padding: 0.3rem;
+}
+
+.delivery-time-item {
+  display: grid;
+  order: 1px solid red;
+  grid-template-columns: 11rem 4rem;
+  grid-template-rows: 5rem;
+  width: 16;
+  margin-inline: 2rem;
+
+  place-items: center;
+}
+
+.delivery-time-container .delivery-time-item label {
+  color: rgb(72, 173, 72);
+
+  margin: 0px;
+
+  font-size: 1.8rem;
+}
+
+.delivery-time-item.delivery-date {
+  border: px solid white;
+  width: 16rem;
+  background-color: rgb(246, 214, 132);
+  margin-inline: auto;
+  border-radius: 10px;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  margin-bottom: 3rem;
+}
+
+input.date-input {
+  width: 10rem;
+  margin-top: 0rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  outline: none;
+  color: rgb(98, 98, 98);
+  text-align-last: center;
+  font-size: 1.6rem;
+}
+
+/*Arrows*/
+.delivery-time-container .arrows {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 7rem;
+  width: 17rem;
+  margin-inline: auto;
+}
+
+.delivery-time-container .arrows .left-arrow,
+.delivery-time-container .arrows .right-arrow {
+  color: white;
+  width: 6rem;
+  margin: 0;
+}
+
+.delivery-time-container .arrows .left-arrow:hover,
+.delivery-time-container .arrows .right-arrow:hover {
+  filter: brightness(80%);
+}
+
+.delivery-time-container .arrows .left-arrow {
+  display: grid;
+  justify-self: center;
+}
+
+.delivery-time-container img.right-arrow {
+  order: 3px solid red;
+  justify-self: right;
+}
+
+@media only screen and (min-width: 1200px) {
+  .delivery-time-container .arrows {
+    margin-inline: auto;
+    width: 105rem;
+    order: 1px solid blue;
+  }
+}
+
+@media only screen and (min-width: 480px) {
+  .list-of-delivery-time-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(6, 5.2rem);
+  }
+
+  .delivery-time-container .arrows {
+    width: 34rem;
+  }
+}
+
+@media only screen and (min-width: 760px) {
+  .list-of-delivery-time-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(4, 5.2rem);
+  }
+
+  .delivery-time-container .arrows {
+    width: 55rem;
+  }
+}

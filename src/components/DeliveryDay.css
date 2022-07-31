@@ -1,0 +1,214 @@
+.smile {
+  color: white;
+  width: 2rem;
+  margin: 0;
+  display: inline;
+  position: relative;
+  top: 0.4rem;
+  left: -3rem;
+}
+
+.make-your-choice {
+  position: relative;
+  left: -2rem;
+}
+
+.alert {
+  width: 20rem;
+  height: 5rem;
+
+  position: fixed;
+  top: 40%;
+  right: -20rem;
+  transition: 1s;
+
+  border-radius: 2rem;
+  font-size: 1.6rem;
+
+  color: white;
+  font-weight: bold;
+
+  background-color: chocolate;
+  display: inline;
+  text-align: center;
+  line-height: 5rem;
+}
+
+.alert-hidden {
+  right: -5.4rem;
+  transition: 1s;
+}
+
+.list-of-delivery-day-items {
+  display: grid;
+  grid-template-columns: 11rem;
+  grid-template-rows: repeat(14, 5rem);
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.delivery-day-container div.delivery-day {
+  margin-bottom: 6rem;
+  order: 3px solid rgb(246, 214, 132);
+  border-radius: 10px;
+  width: fit-content;
+  margin-inline: auto;
+
+  background-color: rgb(246, 214, 132);
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  order: 2px solid blue;
+}
+
+div.delivery-day h2 {
+  font-size: 2.2rem;
+  text-align: center;
+  background-color: rgb(72, 173, 72);
+  color: white;
+  margin-bottom: 2.3rem;
+
+  padding: 0.3rem;
+}
+
+.delivery-day-item {
+  display: grid;
+  order: 1px solid red;
+  grid-template-columns: 9rem 2rem;
+  grid-template-rows: 5rem;
+  place-items: center;
+  width: 12rem;
+  margin-inline: auto;
+  place-self: center;
+}
+
+.delivery-day-item input {
+  justify-self: right;
+}
+
+.delivery-day-container .delivery-day-item label {
+  margin: 0px;
+
+  font-size: 1.8rem;
+  color: rgb(72, 173, 72);
+  justify-self: left;
+}
+
+.delivery-day-item.delivery-date {
+  border: px solid white;
+  width: 16rem;
+  background-color: rgb(246, 214, 132);
+  margin-inline: auto;
+  border-radius: 10px;
+  margin-bottom: 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+input.date-input {
+  width: 10rem;
+  margin-top: 0rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  outline: none;
+  color: rgb(98, 98, 98);
+  text-align-last: center;
+  font-size: 1.6rem;
+}
+
+/*Arrows*/
+.delivery-day-container .arrows {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 7rem;
+  width: 17rem;
+  margin-inline: auto;
+  order: 2px solid blue;
+}
+
+.delivery-day-container .arrows .left-arrow,
+.delivery-day-container .arrows .right-arrow {
+  color: white;
+  width: 6rem;
+  margin: 0;
+}
+
+.delivery-day-container .arrows .left-arrow:hover,
+.delivery-day-container .arrows .right-arrow:hover {
+  filter: brightness(80%);
+}
+
+.delivery-day-container .arrows .left-arrow {
+  display: grid;
+  justify-self: center;
+}
+
+.delivery-day-container img.right-arrow {
+  order: 3px solid red;
+  justify-self: right;
+}
+
+@media only screen and (min-width: 480px) {
+  .list-of-delivery-day-items {
+    display: grid;
+    grid-template-columns: 1fr 13.5rem;
+    grid-template-rows: repeat(7, 5rem);
+    padding-right: 1rem;
+  }
+
+  .delivery-day-container .arrows {
+    width: 32rem;
+  }
+
+  .one,
+  .three,
+  .five,
+  .seven,
+  .nine,
+  .eleven,
+  .thirteen {
+    margin-right: 4rem;
+  }
+}
+
+@media only screen and (min-width: 680px) {
+  .list-of-delivery-day-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 13rem;
+    grid-template-rows: repeat(5, 6rem);
+    padding-right: 1rem;
+  }
+
+  .one,
+  .four,
+  .seven,
+  .nine,
+  .ten,
+  .thirteen {
+    margin-left: 0rem;
+    margin-right: 5rem;
+  }
+
+  .two,
+  .five,
+  .eight,
+  .eleven,
+  .fourteen {
+    margin-left: 0rem;
+
+    justify-self: left;
+  }
+
+  .three,
+  .six,
+  .nine,
+  .twelve {
+    margin: 0;
+    justify-self: left;
+  }
+
+  .delivery-day-container .arrows {
+    width: 48rem;
+  }
+}

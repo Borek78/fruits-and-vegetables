@@ -1,0 +1,50 @@
+/*Arrows*/
+.summary .arrows {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 7rem;
+  width: 17rem;
+  margin-inline: auto;
+}
+
+.summary .arrows .left-arrow,
+.summary .arrows .right-arrow {
+  color: white;
+  width: 6rem;
+  margin: 0;
+}
+
+.summary .arrows .left-arrow:hover,
+.summary .arrows .right-arrow:hover {
+  filter: brightness(80%);
+}
+
+.summary .arrows .left-arrow {
+  display: grid;
+  justify-self: center;
+}
+
+.summary img.right-arrow {
+  order: 3px solid red;
+  justify-self: right;
+}
+
+@media only screen and (min-width: 1200px) {
+  .summary .arrows {
+    margin-inline: auto;
+    width: 105rem;
+    order: 1px solid blue;
+  }
+}
+
+@media only screen and (min-width: 480px) {
+  .delivery-time-container .arrows {
+    width: 34rem;
+  }
+}
+
+@media only screen and (min-width: 760px) {
+  .summary .arrows {
+    width: 55rem;
+  }
+}

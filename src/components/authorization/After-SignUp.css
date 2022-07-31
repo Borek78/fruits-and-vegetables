@@ -1,0 +1,31 @@
+.after-sign-up-page {
+  font-size: 2.5rem;
+  place-self: center;
+  color: green;
+  text-align: center;
+  order: 1px solid green;
+}
+
+.congratulations {
+  margin-bottom: 4rem;
+}
+
+.back-to-login-btn {
+  background-color: chocolate;
+  width: 25rem;
+  border-radius: 1rem;
+  font-size: 2.2rem;
+  margin-top: 6rem;
+  color: white;
+  padding: 1rem;
+  border: none;
+}
+
+.back-to-login-btn:hover {
+  color: white;
+  background: rgb(175, 82, 16);
+}
+
+.chocolate {
+  color: chocolate;
+}

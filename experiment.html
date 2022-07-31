@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="date" value="" /><br /><br />
+    <p id="demo"></p>
+    <script>
+      /*get today date and destructure it*/
+      const date = new Date(),
+        d = date.getDate(),
+        m = date.getMonth(),
+        y = date.getFullYear();
+
+      /*create array of dates and weekdays*/
+      const arr = new Array();
+
+      for (i = 1; i < 14; i++) {
+        const curdate = new Date(y, m, d + i);
+
+        const month = curdate.getMonth() + 1;
+        const day = curdate.getDate();
+        let weekDay = curdate.getDay();
+
+        /*replace weekNumber*/
+        if (weekDay === 0) weekDay = "Sun";
+        if (weekDay === 1) weekDay = "Mon";
+        if (weekDay === 2) weekDay = "Tue";
+        if (weekDay === 3) weekDay = "Wed";
+        if (weekDay === 4) weekDay = "Thu";
+        if (weekDay === 5) weekDay = "Fri";
+        if (weekDay === 6) weekDay = "Sat";
+
+        arr.push({ date: day + "." + month + ".", weekDay: weekDay });
+      }
+
+      console.log(arr);
+
+      const newArr = arr;
+
+      /*remove the first item of the array*/
+
+      // let date = new Date();
+      // let newDate = date;
+      // console.log(date);
+      // console.log(newDate);
+
+      // date.setDate(date.getDate() + 1);
+
+      // console.log(date);
+      // console.log(newDate);
+
+      // let x = 1;
+      // let z = x;
+
+      // console.log(x);
+      // console.log(z);
+
+      // x = x + 1;
+
+      // console.log(x);
+      // console.log(z);
+
+      // i = 0;
+      // const arr = new Array();
+
+      // while (i < 3) {
+      //   let date = new Date();
+      //   console.log(arr);
+
+      //   arr.push(date);
+      //   console.log(arr);
+
+      //   date = date.setDate(date.getDate() + 1);
+      //   console.log(date);
+
+      //   i++;
+      // }
+
+      // const addDays = (date, period) => {
+      //   date.setDate(date.getDate() + period);
+      // };
+
+      // let date = new Date(); //YYYY-MM-DD
+      // console.log(date);
+
+      // addDays(date, 7);
+      // console.log(date);
+
+      // const endDate = date.setDate(date.getDate() + 7);
+      // console.log(endDate); //YYYY-MM-DD
+
+      // const ahoj = date.setDate(date.getDate() + 1);
+      // console.log(ahoj);
+      // var getDateArray = function (start, end) {
+      //   var arr = new Array();
+      //   var dt = new Date(start);
+      //   while (dt <= end) {
+      //     arr.push(new Date(dt));
+      //     dt.setDate(dt.getDate() + 1);
+      //   }
+      //   return arr;
+      // };
+
+      // var dateArr = getDateArray(startDate, endDate);
+
+      //  const date = new Date();
+      //  console.log(date);
+
+      //  const day1 = date.getDate();
+      //  console.log(day1);
+
+      //  const month = date.getMonth() + 1;
+      //  console.log(month);
+
+      //  const dates = [day1 + "." + month + "."];
+      //  console.log(dates);
+
+      //  let text;
+      //  let i = 0;
+      //  while (i < 10) {
+      //    i++;
+      //    text += "ahoj";
+      //  }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,190 @@
+.error-message {
+  color: chocolate;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+
+  display: block;
+}
+
+.address-container {
+  order: 4px solid rgb(238, 157, 100);
+}
+
+.address {
+  border: 2px solid white;
+  width: 30rem;
+  margin-inline: auto;
+  border-radius: 30px;
+  height: 105rem;
+  background-color: rgb(246, 214, 132);
+  margin-bottom: 5rem;
+}
+
+.form-address {
+  display: grid;
+  grid-template-rows: repeat(8, 11rem);
+  place-self: center;
+  margin-inline: auto;
+  place-items: center;
+}
+
+.address-container label {
+  display: block;
+  color: rgb(72, 173, 72);
+  font-weight: 600;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.form-item {
+  order: 1px solid red;
+  width: calc(100% - 10rem);
+  /* margin-inline: auto; */
+}
+
+.address-container input {
+  border: none;
+  width: 100%;
+  border-radius: 1rem;
+  padding: 1rem;
+  font-size: 2rem;
+  color: rgb(98, 98, 98);
+}
+
+.address-container input:focus {
+  outline: 2px solid chocolate;
+  box-shadow: 0 0 0.5rem chocolate;
+}
+
+.address h2 {
+  font-size: 2.2rem;
+  color: rgb(103, 167, 0);
+  text-align: center;
+  margin-bottom: 4rem;
+  margin-top: 4rem;
+  background-color: rgb(72, 173, 72);
+  color: white !important;
+  height: 4rem;
+  padding: 0.5rem;
+  padding-top: 0.7rem;
+}
+
+/*ARROWS-GRID*/
+.address-container .arrows-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 7rem;
+  width: 28rem;
+  margin-inline: auto;
+  order: 3px solid green;
+}
+
+div.address-container div.arrows-grid img.left-arrow,
+div.address-container div.arrows-grid img.right-arrow {
+  color: white;
+  width: 6rem;
+  margin: 0;
+  order: 3px solid blue;
+}
+
+div.address-container div.arrows-grid .left-arrow {
+  justify-self: left;
+}
+
+div.address-container div.arrows-grid .right-arrow {
+  justify-self: right;
+}
+
+.address-container .arrows-grid .left-arrow:hover,
+.address-container .arrows-grid .right-arrow:hover {
+  filter: brightness(80%);
+}
+
+.address-container .arrows-grid .left-arrow {
+  display: grid;
+  justify-self: center;
+}
+
+/*borders of arrows elements*/
+
+.arrows-child-left {
+  order: 3px solid brown;
+  adding: 3px;
+}
+
+.arrows-child-right {
+  order: 3px solid brown;
+  adding: 3px;
+  display: grid;
+}
+
+a.link-right-arrow {
+  order: 3px solid red;
+  adding: 3px;
+  width: fit-content;
+  justify-self: right;
+}
+
+.link-left-arrow {
+  order: 3px solid red;
+  adding: 3px;
+  width: fit-content;
+}
+
+@media only screen and (min-width: 360px) {
+  .address {
+    width: auto;
+    margin-inline: 2.3rem;
+  }
+
+  .address-container .arrows-grid {
+    margin-inline: 4.4rem;
+    width: auto;
+    order: 1px solid blue;
+  }
+
+  .address-container .link-right-arrow,
+  .address-container .link-left-arrow {
+    display: grid;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .form-address {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, 11rem);
+  }
+
+  .address {
+    height: 63rem;
+    margin-bottom: 4rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .form-address {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, 11rem);
+  }
+
+  .address {
+    height: 63rem;
+    margin-bottom: 4rem;
+    width: 110rem;
+    margin-inline: auto;
+  }
+
+  .address-container .arrows-grid {
+    margin-inline: auto;
+    width: 105rem;
+    order: 1px solid blue;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .form-item {
+    height: rem;
+    order: 1px solid red;
+    width: calc(100% - 5rem);
+  }
+}

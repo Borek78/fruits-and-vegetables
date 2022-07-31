@@ -1,0 +1,37 @@
+.header-container {
+  display: grid;
+  position: sticky;
+  box-shadow: 0rem 0rem 2rem 0rem rgb(255, 204, 76);
+  margin-bottom: 6rem;
+  height: 8rem;
+  place-items: center;
+}
+
+.header-h2 {
+  font-family: monospace;
+  font-size: 4rem;
+}
+
+.header-container ul {
+  padding-inline-start: 0;
+}
+
+/* Barevný nápis*/
+
+@media only screen and (max-width: 550px) {
+  .header-container {
+    height: 13rem;
+  }
+
+  h2.header-h2 {
+    padding-right: 4rem;
+    padding-left: 4rem;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  h2.header-h2 {
+    padding-right: 0rem;
+    padding-left: 0rem;
+  }
+}

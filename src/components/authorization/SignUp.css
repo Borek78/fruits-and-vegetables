@@ -1,0 +1,79 @@
+.signup-container {
+  order: 4px solid blue;
+  height: 55rem;
+  width: 24rem;
+  place-self: center;
+}
+
+.signup-container form {
+  display: grid;
+  grid-template-rows: 8rem 8rem 8rem 12rem 7rem;
+}
+
+.signup-container .h2-authorization {
+  margin-bottom: 2rem;
+}
+
+.big-signup-btn {
+  border: none;
+  margin-top: 5rem;
+  padding: 1rem;
+  background-color: rgb(95, 137, 53);
+  width: 20rem;
+  border-radius: 1rem;
+  font-size: 2.2rem;
+  color: white;
+}
+
+.small-login-btn {
+  border: none;
+  padding: 1rem;
+  background-color: chocolate;
+  width: rem;
+  border-radius: 5rem;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.small-login-btn:hover {
+  background: rgb(175, 82, 16);
+}
+
+.big-signup-btn:hover {
+  background: rgb(65, 111, 19);
+}
+
+.signup-container .input-password {
+  border: 3px solid orangered;
+  border-radius: 10px;
+  width: 20rem;
+}
+
+.signup-container .input-name {
+  border: 3px solid rgb(94, 128, 0);
+  border-radius: 10px;
+  width: 20rem;
+}
+
+.signup-container .input-confirm-password {
+  border: 3px solid orange;
+  order: 3px solid blue;
+  border-radius: 10px;
+  width: 20rem;
+  padding: 1rem;
+  font-size: 2rem;
+}
+
+.sign-up-alert {
+  display: block;
+  color: orangered;
+  font-size: 1.2rem;
+  position: relative;
+  top: -0.6rem;
+  left: 1rem;
+  visibility: hidden;
+}
+
+.display-none {
+  display: none;
+}

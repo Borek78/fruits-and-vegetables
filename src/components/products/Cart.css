@@ -1,0 +1,115 @@
+ul {
+  list-style-type: none;
+}
+
+.cartIcon button {
+  order: 0.2rem solid black;
+  border-radius: 2rem;
+  padding: 1rem;
+  cursor: pointer;
+  width: 12.5rem;
+  box-sizing: border-box;
+  font-size: 1.6rem;
+  color: white;
+  background: rgb(101, 159, 0);
+  margin-top: 0px;
+  place-self: center;
+}
+
+.cartIcon button:hover {
+  background: rgb(76, 120, 0);
+}
+
+/* .cart-container {
+  border: 0.1px solid green;
+  border-radius: 1rem;
+  margin: 2rem;
+  height: 40rem;
+  padding: 1rem;
+  overflow: scroll;
+  overflow-x: hidden;
+  margin-top:6rem
+} */
+
+.cart-container ul {
+  padding: 0px;
+}
+
+.cartItem {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+
+  align-items: center;
+  border-radius: 1rem;
+  font-size: 2.4rem;
+  font-weight: bold;
+  background: #538643;
+  color: #fbeaeb;
+  margin-bottom: 2rem;
+  /* padding-left: 2rem; */
+  justify-items: center;
+
+  margin: 0rem 4rem 4rem 4rem;
+}
+
+.cart-actions {
+  color: white;
+  font-size: 2rem;
+  width: 5rem;
+  border: none;
+  background: rgb(213, 151, 58);
+}
+
+h2.your-cart {
+  font-size: 2rem;
+  color: goldenrod;
+  margin-bottom: 1rem;
+  margin-top: 7rem;
+  margin-left: 4rem;
+}
+
+button.cart-actions {
+  margin-bottom: 2.2rem;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.empty-cart {
+  margin-left: 4rem;
+  margin-top: 2rem;
+  font-size: 4rem;
+  color: rgb(58, 155, 58);
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 860px) {
+  .cartItem {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 15rem 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .cartItem {
+    display: grid;
+    grid-template-columns: 15rem 1fr 1fr;
+    grid-template-rows: 8rem 8rem 2rem;
+    margin: 0rem 2rem 4rem 2rem;
+  }
+
+  h2.your-cart {
+    font-size: 2rem;
+    color: goldenrod;
+    margin-bottom: 1rem;
+    margin-top: 7rem;
+    margin-left: 2rem;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .cartItem {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 8rem 5rem 11rem;
+  }
+}

@@ -1,0 +1,12 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  height: 3rem;
+  justify-items: center;
+  align-items: center;
+  border: 3px solid green;
+}
+
+.container > div {
+  border: 1px solid blue;
+}

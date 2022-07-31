@@ -1,0 +1,101 @@
+import Header from "./Header";
+import "./DeliveryTime.css";
+import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { v4 as uuidv4 } from "uuid";
+import { useState, useEffect } from "react";
+import { deliveryActions } from "../store/deliverySlice";
+import "./DeliveryService.css";
+import { sleep } from "../functions/sleep";
+
+//images
+import left from "../images/arrow-left-circle-fill.svg";
+import right from "../images/arrow-right-circle-fill.svg";
+import smile from "../images/emoji-smile-fill.svg";
+
+const DeliveryService = () => {
+  const dispatch = useDispatch();
+
+  const deliveryServiceStore = useSelector(
+    (state) => state.delivery.deliveryService
+  );
+
+  const [deliveryService, setDeliveryService] = useState(deliveryServiceStore);
+
+  async function noChoice(e) {
+    // const deliveryTimeLength = Object.keys(deliveryDay).length;
+
+    if (deliveryService === "") {
+      e.preventDefault();
+
+      const x = document.querySelector(".please-make-a-choice");
+
+      x.classList.add("show-alert");
+      await sleep(4000);
+      x.classList.remove("show-alert");
+    }
+  }
+
+  useEffect(() => {
+    dispatch(deliveryActions.setDeliveryService(deliveryService));
+  }, [dispatch, deliveryService]);
+
+  return (
+    <div className="delivery-service-container">
+      <Header />
+
+      <main className="delivery-service-main">
+        <h2>Delivery Service</h2>
+        <div className="list-of-delivery-services">
+          <div key={uuidv4()} className="delivery-service-item">
+            <label>Santa Claus - 35$</label>
+            <input
+              type="radio"
+              name="deliveryTime"
+              checked={deliveryService === "Santa Claus"}
+              onChange={(e) => {
+                setDeliveryService("Santa Claus");
+              }}
+            />
+          </div>
+          <div key={uuidv4()} className="delivery-service-item">
+            <label>Local Witches - 35$</label>
+            <input
+              type="radio"
+              checked={deliveryService === "Local Witches"}
+              name="deliveryTime"
+              onChange={(e) => {
+                setDeliveryService("Local Witches");
+              }}
+            />
+          </div>
+        </div>
+        <div className="free-delivery-is-available">
+          *free delivery available for orders over 100$.
+        </div>
+
+        <div className="alert please-make-a-choice">
+          <img src={smile} alt="smile-emoji" className="smile" />
+          <span className="make-your-choice">Pick a service.</span>
+        </div>
+      </main>
+
+      <div className="arrows">
+        <Link to={`/delivery-time`}>
+          <img src={left} alt="" className="left-arrow" />
+        </Link>
+        <Link
+          to={`/summary`}
+          className="link-right-arrow"
+          onClick={(e) => {
+            noChoice(e);
+          }}
+        >
+          <img src={right} alt="" className="right-arrow" />
+        </Link>
+      </div>
+    </div>
+  );
+};
+
+export default DeliveryService;

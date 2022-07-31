@@ -1,7 +1,9 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
+/server-api
 /a-zalohy
+/experimental
 /node_modules
 /build
 /.pnp

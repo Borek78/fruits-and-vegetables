@@ -1,0 +1,236 @@
+.delivery-service-container .smile {
+  color: white;
+  width: 2rem;
+  margin: 0;
+  display: inline;
+  position: relative;
+  top: 0.4rem;
+  left: -1.8rem;
+}
+
+.delivery-service-container .make-your-choice {
+  position: relative;
+  left: -1rem;
+}
+
+.delivery-service-container .alert {
+  width: 20rem;
+  height: 5rem;
+
+  position: fixed;
+  top: 40%;
+  right: -20rem;
+
+  transition: 1s;
+
+  border-radius: 2rem;
+  font-size: 1.6rem;
+
+  color: white;
+  font-weight: bold;
+
+  background-color: chocolate;
+  display: inline;
+  text-align: center;
+  line-height: 5rem;
+}
+
+.delivery-service-container .show-alert {
+  right: -2.8rem;
+}
+
+.list-of-delivery-services {
+  display: grid;
+  grid-template-columns: 24rem;
+  grid-template-rows: 5rem 5rem;
+  order: 2px solid blue;
+  place-items: center;
+}
+
+.free-delivery-is-available {
+  color: rgb(72, 173, 72);
+  color: white;
+  color: chocolate;
+  font-weight: bold;
+  width: 18rem;
+  margin-inline: auto;
+  font-size: 1.5rem;
+  line-height: 2.3rem;
+  margin-top: 2rem;
+  border-top: 1px solid white;
+  order-radius: 10px;
+  padding-top: 1rem;
+  text-align: center;
+}
+
+.delivery-service-container .delivery-service-main {
+  margin-bottom: 6rem;
+  order: 3px solid rgb(246, 214, 132);
+  border-radius: 10px;
+  width: fit-content;
+  margin-inline: auto;
+  background-color: rgb(246, 214, 132);
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.delivery-service-container .delivery-day-main {
+  color: rgb(72, 173, 72);
+
+  font-size: 1.9rem;
+  padding: 0.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  border-radius: 1rem;
+  font-weight: bold;
+  border: 2px solid white;
+}
+
+main.delivery-service-main h2 {
+  font-size: 2.2rem;
+  text-align: center;
+  background-color: rgb(72, 173, 72);
+  color: white;
+  margin-bottom: 2.3rem;
+  padding: 0.3rem;
+}
+
+.delivery-service-container .delivery-service-item label {
+  color: rgb(72, 173, 72);
+  margin: 0px;
+  font-size: 1.8rem;
+  place-self: center;
+  align-self: center;
+  display: inline-block;
+  text-align: center;
+}
+
+.delivery-time-item.delivery-date {
+  border: px solid white;
+  width: 16rem;
+  background-color: rgb(246, 214, 132);
+  margin-inline: auto;
+  border-radius: 10px;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  margin-bottom: 3rem;
+}
+
+.delivery-service-container input {
+  margin-top: 0rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  outline: none;
+  color: rgb(98, 98, 98);
+  text-align-last: center;
+  font-size: 1.6rem;
+  place-self: center;
+  display: inline-block;
+  margin-left: 2rem;
+}
+
+/*Arrows*/
+.delivery-time-container .arrows {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 7rem;
+  width: 17rem;
+  margin-inline: auto;
+}
+
+.delivery-time-container .arrows .left-arrow,
+.delivery-time-container .arrows .right-arrow {
+  color: white;
+  width: 6rem;
+  margin: 0;
+}
+
+.delivery-time-container .arrows .left-arrow:hover,
+.delivery-time-container .arrows .right-arrow:hover {
+  filter: brightness(80%);
+}
+
+.delivery-time-container .arrows .left-arrow {
+  display: grid;
+  justify-self: center;
+}
+
+.delivery-time-container img.right-arrow {
+  order: 3px solid red;
+  justify-self: right;
+}
+
+/* @media only screen and (min-width: 250px) {
+  .delivery-time-container .arrows {
+    margin-inline: 4.4rem;
+    width: auto;
+    border: 1px solid blue;
+  }
+
+  .delivery-time-container .link-right-arrow {
+    display: grid;
+  }
+} */
+
+@media only screen and (min-width: 480px) {
+  .list-of-delivery-time-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(6, 5.2rem);
+  }
+}
+
+@media only screen and (min-width: 760px) {
+  .list-of-delivery-time-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(4, 5.2rem);
+  }
+}
+
+/*Arrows*/
+.delivery-service-container .arrows {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 7rem;
+  width: 17rem;
+  margin-inline: auto;
+  order: 2px solid blue;
+}
+
+.delivery-service-container .arrows .left-arrow,
+.delivery-service-container .arrows .right-arrow {
+  color: white;
+  width: 6rem;
+  margin: 0;
+}
+
+.delivery-service-container .arrows .left-arrow:hover,
+.delivery-service-container .arrows .right-arrow:hover {
+  filter: brightness(80%);
+}
+
+.delivery-service-container .arrows .left-arrow {
+  display: grid;
+  justify-self: center;
+}
+
+.delivery-service-container img.right-arrow {
+  order: 3px solid red;
+  justify-self: right;
+}
+
+@media only screen and (min-width: 480px) {
+  .delivery-service-container .arrows {
+    width: 32rem;
+  }
+}
+
+@media only screen and (min-width: 680px) {
+  .delivery-day-container .arrows {
+    width: 48rem;
+  }
+}

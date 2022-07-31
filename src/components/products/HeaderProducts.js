@@ -1,13 +1,14 @@
 import React from "react";
-import "./Header.css";
+import Cart from "./Cart";
+import "./HeaderProducts.css";
 
-const Header = () => {
+const HeaderProducts = () => {
   return (
     <header>
-      <nav className="header-container">
-        <ul className="header-ul">
-          <li className="title">
-            <h2 className="header-h2">
+      <nav className="header-products-container">
+        <ul className="header-products-ul">
+          <li className="header-products-title">
+            <h2 className="header-products-h2">
               <span className="red">F</span>
               <span className="red">r</span>
               <span className="green">u</span>
@@ -31,10 +32,14 @@ const Header = () => {
               <span className="green">s</span>
             </h2>
           </li>
+
+          <li className="cart">
+            <Cart />
+          </li>
         </ul>
       </nav>
     </header>
   );
 };
 
-export default Header;
+export default HeaderProducts;

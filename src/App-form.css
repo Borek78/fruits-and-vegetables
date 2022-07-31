@@ -1,0 +1,12 @@
+.container {
+  width: 20rem;
+  margin-inline: auto;
+}
+
+.container * {
+  margin: 1rem;
+}
+
+.container h1 {
+  margin-bottom: 3rem;
+}

@@ -1,0 +1,93 @@
+.login-container {
+  order: 4px solid blue;
+  width: 24rem;
+  height: 48rem;
+  place-self: center;
+}
+
+.h2-authorization {
+  text-align: center;
+  font-family: monospace;
+  font-size: 4rem;
+  margin-bottom: 2rem;
+}
+
+.input-name {
+  border: 0.3rem solid orangered;
+
+  border-radius: 10px;
+  width: 20rem;
+  padding: 1rem;
+  font-size: 2.2rem;
+}
+
+.input-password {
+  border: 0.3rem solid rgb(94, 128, 0);
+  border-radius: 10px;
+  width: 20rem;
+  padding: 1rem;
+  font-size: 2.2rem !important;
+}
+
+h1 {
+  padding: 3rem;
+  color: white;
+  font-size: 5rem;
+}
+
+form {
+  display: grid;
+  place-items: center;
+  grid-template-rows: 8rem 8rem 1fr 10rem;
+  place-self: center;
+}
+
+form .login-btn {
+  background-color: chocolate;
+  width: 20rem;
+  border-radius: 1rem;
+  font-size: 2.2rem;
+  margin-top: 6rem;
+  color: white;
+  border: none;
+  padding: 1rem;
+}
+
+.signup-btn {
+  padding: 1rem;
+  background-color: rgb(95, 137, 53);
+  border-radius: 5rem;
+  font-size: 1.5rem;
+  margin-top: 5rem;
+  color: white;
+  border: none;
+}
+
+.login-btn:hover {
+  color: white;
+  background: rgb(175, 82, 16);
+}
+
+.signup-btn:hover {
+  color: white;
+  background: rgb(65, 111, 19);
+}
+
+/* Barevný nápis*/
+.red {
+  color: red;
+}
+.orange {
+  color: orange;
+}
+.green {
+  color: green;
+}
+
+/* .form input[type="password"] {
+  font-size: 2.2rem !important;
+}
+
+input {
+  font-size: 2.2rem !important;
+} */
