@@ -14,7 +14,7 @@ const deliverySlice = createSlice({
     setDeliveryAddress(state, action) {
       const deliveryAddress = action.payload;
       state.deliveryAddress = deliveryAddress;
-      console.log(current(state));
+      //console.log(current(state));
     },
 
     setDeliveryDate(state, action) {

@@ -1,39 +1,45 @@
-import "./App-form.css";
-import { useState } from "react";
+import "./App.css";
+import useForm from "./hooks/useForm";
 
 function App() {
-  const [address, setAddress] = useState({
-    firstName: "",
-    secondName: "",
-  });
+  //Final submit function
+  const formLogin = () => {
+    console.log("Callback function when form is submitted!");
+    console.log("Form Values ", values);
+  };
 
-  function handleChange(e) {
-    const { name, value } = e.target;
-    setAddress({ ...address, [name]: value });
-  }
+  //Custom hook call
+  const { handleChange, values, errors, handleSubmit } = useForm(formLogin);
 
   return (
-    <div className="container">
-      <div className="field">
-        <label>First Name</label>
+    <div className="App">
+      <form onSubmit={handleSubmit}>
         <input
-          className="input-form"
-          name="firstName"
-          type="text"
+          type="email"
+          name="email"
+          placeholder="E-mail"
           onChange={handleChange}
-          value={address.firstName}
         />
-      </div>
-      <div className="field">
-        <label>Second Name</label>
+        {errors.email && <h3>{errors.email}</h3>}
         <input
-          className="input-form"
-          name="secondName"
-          type="text"
+          minLength="8"
+          type="password"
+          name="password"
+          placeholder="password"
           onChange={handleChange}
-          value={address.secondName}
         />
-      </div>
+        {errors.password && <h3>{errors.password}</h3>}
+        <input
+          type="text"
+          minLength="5"
+          required
+          name="username"
+          placeholder="username"
+          onChange={handleChange}
+        />
+        {errors.username && <h3>{errors.username}</h3>}
+        <input type="submit" value="Submit" className="submit" />
+      </form>
     </div>
   );
 }

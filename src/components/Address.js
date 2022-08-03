@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { ValidateAddress } from "../functions/ValidateAddress";
 import { deliveryActions } from "../store/deliverySlice";
 import { useDispatch } from "react-redux";
+import useForm from "../hooks/useForm";
 
 import Header from "./Header";
 import "./Adress.css";
@@ -12,30 +12,12 @@ import right from "../images/arrow-right-circle-fill.svg";
 
 const Address = (props) => {
   const dispatch = useDispatch();
-  //prettier-ignore
-  const initialValues = { firstName: "", secondName: "", email: "",
-    street: "", city: "", province: "", state: "", zipCode: "",
-  };
-  const [address, setAddress] = useState(initialValues);
 
-  function validateForm(e) {
-    if (ValidateAddress()) {
-      e.preventDefault();
-    }
-  }
-
-  console.log(ValidateAddress);
+  const { handleChange, address, handleArrowClick } = useForm();
 
   useEffect(() => {
     dispatch(deliveryActions.setDeliveryAddress(address));
   }, [dispatch, address]);
-
-  function handleChange(e) {
-    console.log(e.target);
-    const { name, value } = e.target;
-    console.log(name + " " + value);
-    setAddress({ ...address, [name]: value });
-  }
 
   return (
     <div className="address-container">
@@ -47,24 +29,26 @@ const Address = (props) => {
           <div className="form-item">
             <label>First Name</label>
             <input
-              className="full-name"
+              className="input-first-name"
               name="firstName"
               type="text"
               onChange={handleChange}
               value={address.firstName}
             />
-            <span className="error-message">Empty field.</span>
+            <span className="error-message first-name-span"></span>
           </div>
 
           <div className="form-item">
             <label>Second Name</label>
             <input
-              className="full-name"
+              className="second-name"
               name="secondName"
               type="text"
               onChange={handleChange}
               value={address.secondName}
             />
+
+            <span className="error-message second-name-span"></span>
           </div>
 
           <div className="form-item">
@@ -76,18 +60,36 @@ const Address = (props) => {
               onChange={handleChange}
               value={address.email}
             />
+
+            <span className="error-message email-span"></span>
           </div>
 
-          <div className="form-item">
-            <label>Street address</label>
-            <input
-              className="full-name"
-              name="street"
-              type="text"
-              onChange={handleChange}
-              value={address.street}
-            />
+          <div className="form-item street">
+            <div className="street-name">
+              <label>Street</label>
+              <input
+                className="street-name-input"
+                name="streetName"
+                type="text"
+                onChange={handleChange}
+                value={address.streetName}
+              />
+              <span className="error-message street-name-span"></span>
+            </div>
+
+            <div className="street-number">
+              <label>No</label>
+              <input
+                className="street-number-input"
+                name="streetNumber"
+                type="text"
+                onChange={handleChange}
+                value={address.streetNumber}
+              />
+              <span className="error-message street-number-span"></span>
+            </div>
           </div>
+
           <div className="form-item">
             <label>City</label>
             <input
@@ -97,9 +99,10 @@ const Address = (props) => {
               onChange={handleChange}
               value={address.city}
             />
+            <span className="error-message city-span"></span>
           </div>
           <div className="form-item">
-            <label>Province</label>
+            <label>Province - optional</label>
             <input
               className="full-name"
               name="province"
@@ -107,6 +110,7 @@ const Address = (props) => {
               onChange={handleChange}
               value={address.province}
             />
+            <span className="error-message province-span"></span>
           </div>
           <div className="form-item">
             <label>State</label>
@@ -117,6 +121,7 @@ const Address = (props) => {
               onChange={handleChange}
               value={address.state}
             />
+            <span className="error-message state-span"></span>
           </div>
           <div className="form-item">
             <label>Zip Code</label>
@@ -127,9 +132,11 @@ const Address = (props) => {
               onChange={handleChange}
               value={address.zipCode}
             />
+            <span className="error-message zip-code-span"></span>
           </div>
         </form>
       </div>
+
       <div className="arrows-grid">
         <div className="arrows-child-left">
           <Link to={`/`} className="link-left-arrow">
@@ -138,9 +145,7 @@ const Address = (props) => {
         </div>
         <div className="arrows-child-right">
           <Link
-            onClick={(e) => {
-              validateForm(e);
-            }}
+            onClick={handleArrowClick}
             to={`/delivery-day`}
             className="link-right-arrow"
           >

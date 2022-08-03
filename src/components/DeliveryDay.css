@@ -16,18 +16,14 @@
 .alert {
   width: 20rem;
   height: 5rem;
-
   position: fixed;
   top: 40%;
   right: -20rem;
   transition: 1s;
-
   border-radius: 2rem;
   font-size: 1.6rem;
-
   color: white;
   font-weight: bold;
-
   background-color: chocolate;
   display: inline;
   text-align: center;

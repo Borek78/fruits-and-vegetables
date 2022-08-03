@@ -1,9 +1,35 @@
+/* * {
+  outline: 3px solid green;
+  height: 3rem;
+} */
+
+.street-number-span {
+  text-align: center;
+}
+
+.street-name-span {
+  border: 3px solid green;
+  width: 12rem;
+  white-space: nowrap;
+}
+
+.street {
+  display: grid;
+  grid-template-columns: 1fr 9rem;
+}
+
+.street-number {
+  margin-left: 2rem;
+}
+
 .error-message {
   color: chocolate;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   margin-top: 1rem;
-
+  font-weight: bold;
   display: block;
+  height: 2.1rem;
+  order: 1px solid blue;
 }
 
 .address-container {

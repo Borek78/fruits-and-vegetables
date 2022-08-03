@@ -1,1 +1,17 @@
+* {
+  margin: 0;
+}
 
+.wrapper {
+  display: grid;
+  order: 3px solid green;
+  height: 100vh;
+}
+
+body {
+  order: 3px solid red;
+}
+
+html {
+  order: 3px solid yellow;
+}
