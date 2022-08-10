@@ -1,5 +1,38 @@
-.header-container {
+.header-container .title {
+  order: 3px solid red;
+  justify-self: left;
+}
+.header-container .header-ul {
   display: grid;
+  grid-template-columns: 1fr 16.5rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  grid-template-rows: 8rem;
+  align-items: center;
+}
+
+button.back-to-products {
+  background-color: rgb(101, 159, 0);
+
+  border-radius: 2rem;
+  padding: 1rem;
+  cursor: pointer;
+  width: 17.5rem;
+  box-sizing: border-box;
+  font-size: 1.6rem;
+  color: white;
+
+  margin-top: 0px;
+  place-self: center;
+  font-size: 1.8rem;
+}
+
+button.back-to-products:hover {
+  background-color: rgb(74, 117, 0);
+  color: white;
+}
+
+.header-container {
   position: sticky;
   box-shadow: 0rem 0rem 2rem 0rem rgb(255, 204, 76);
   margin-bottom: 6rem;
@@ -7,26 +40,72 @@
   place-items: center;
 }
 
-.header-h2 {
+.header-container .header-h2 {
   font-family: monospace;
   font-size: 4rem;
+  justify-self: left;
+  text-align: left;
 }
 
 .header-container ul {
   padding-inline-start: 0;
 }
 
+@media only screen and (max-width: 800px) {
+  .header-container .header-ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 10rem 6rem;
+    justify-items: center;
+  }
+
+  .header-container .title {
+    justify-self: center;
+  }
+
+  .header-container {
+    height: 16rem;
+  }
+
+  .header-container li.li-button {
+    align-self: baseline;
+    order: 3px solid red;
+  }
+}
+
 /* Barevný nápis*/
 
-@media only screen and (max-width: 550px) {
-  .header-container {
-    height: 13rem;
+@media only screen and (max-width: 558px) {
+  .header-container h2.header-h2 {
+    text-align: center;
+    align-self: center;
+    order: 1px solid blue;
   }
 
-  h2.header-h2 {
+  .header-container {
+    height: 22rem;
+  }
+
+  .header-container.header-h2 {
+    text-align: center;
+    place-self: center;
+  }
+
+  .header-container .header-ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 16rem 6rem;
+    justify-items: center;
+    /* padding-left: 4rem;
+    padding-right: 4rem;
+    grid-template-rows: 8rem;
+    align-items: center; */
+  }
+
+  /* h2.header-h2 {
     padding-right: 4rem;
     padding-left: 4rem;
-  }
+  } */
 }
 
 @media only screen and (max-width: 450px) {

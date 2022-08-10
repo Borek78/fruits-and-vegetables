@@ -1,14 +1,9 @@
-/* * {
-  outline: 3px solid green;
-  height: 3rem;
-} */
-
 .street-number-span {
   text-align: center;
 }
 
 .street-name-span {
-  border: 3px solid green;
+  order: 3px solid green;
   width: 12rem;
   white-space: nowrap;
 }

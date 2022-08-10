@@ -22,6 +22,7 @@ const DeliveryTime = () => {
   const [deliveryTime, setDeliveryTime] = useState(deliveryTimeInStore);
 
   const deliveryDay = useSelector((state) => state.delivery.deliveryDay);
+  console.log(deliveryDay);
   const dispatch = useDispatch();
 
   async function noChoice(e) {

@@ -2,7 +2,9 @@
   padding: 0;
   display: grid;
   gap: 5rem;
-  grid-template-columns: repeat(auto-fit, minmax(23rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  margin-left: 2rem;
+  margin-right: 2rem;
 }
 
 button {
@@ -130,5 +132,10 @@ button:hover {
   .total-price-and-order-button .link-right-arrow {
     display: grid;
     place-self: center;
+  }
+
+  .products-container {
+    margin-left: 0;
+    margin-right: 0;
   }
 }

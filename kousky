@@ -1,3 +1,29 @@
+const dispatch = useDispatch();
+const state = useSelector((state) => state);
+
+console.log(state);
+
+// //get data from local storage
+// // useEffect(() => {
+// const storedState = JSON.parse(localStorage.getItem("shop"));
+// console.log(storedState);
+// const deliveryAddress = storedState.delivery.deliveryAddress;
+
+// console.log(deliveryAddress);
+// // });
+
+useEffect(() => {
+  dispatch(deliveryActions.setDeliveryAddress(deliveryAddress));
+}, []);
+  
+  
+  //prettier-ignore
+  const initialValues = {firstName: "", secondName: "", email: "",
+    streetName: "", streetNumber: "", city: "", province: "", state: "",
+    zipCode: "",
+  };
+
+
 // rgb(101, 159, 0)
 
 <div className="form-item agreement">

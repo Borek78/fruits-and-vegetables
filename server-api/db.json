@@ -1,46 +1,198 @@
 {
-  "cart": [
+  "deliveryAddress": [
     {
-      "itemsList": [
-        {
-          "id": 2,
-          "name": "Onion",
-          "price": 3,
-          "quantity": 16,
-          "totalPrice": 48
-        },
-        {
-          "id": 1,
-          "name": "Garlic",
-          "price": 9,
-          "quantity": 18,
-          "totalPrice": 162
-        },
-        {
-          "id": 3,
-          "name": "Carrot",
-          "price": 4,
-          "quantity": 5,
-          "totalPrice": 20
-        },
-        {
-          "id": 4,
-          "name": "Apple",
-          "price": 5,
-          "quantity": 1,
-          "totalPrice": 5
-        },
-        {
-          "id": 5,
-          "name": "Peach",
-          "price": 7,
-          "quantity": 1,
-          "totalPrice": 7
-        }
-      ],
-      "showCart": false,
-      "changed": true,
+      "firstName": "",
+      "secondName": "",
+      "email": "",
+      "streetName": "",
+      "streetNumber": "",
+      "city": "",
+      "province": "",
+      "state": "",
+      "zipCode": "",
       "id": 1
+    },
+    {
+      "firstName": "",
+      "secondName": "",
+      "email": "",
+      "streetName": "",
+      "streetNumber": "",
+      "city": "",
+      "province": "",
+      "state": "",
+      "zipCode": "",
+      "id": 2
+    },
+    {
+      "firstName": "Dalibor",
+      "secondName": "Pavlík",
+      "email": "dalibor.pavlik@gmail.com",
+      "streetName": "Dubinská",
+      "streetNumber": "756",
+      "city": "Pardubice",
+      "province": "Česká republika",
+      "state": "Česko",
+      "zipCode": "53012",
+      "id": 3
+    },
+    {
+      "firstName": "Dalibor",
+      "secondName": "Pavlík",
+      "email": "dalibor.pavlik@gmail.com",
+      "streetName": "Dubinská",
+      "streetNumber": "756",
+      "city": "Pardubice",
+      "province": "Česká republika",
+      "state": "Česko",
+      "zipCode": "53012",
+      "id": 4
+    },
+    {
+      "firstName": "Dalibor",
+      "secondName": "Pavlík",
+      "email": "dalibor.pavlik@gmail.com",
+      "streetName": "Dubinská",
+      "streetNumber": "756",
+      "city": "Pardubice",
+      "province": "Česká republika",
+      "state": "Česko",
+      "zipCode": "53012",
+      "id": 5
+    },
+    {
+      "firstName": "Dalibor",
+      "secondName": "Pavlík",
+      "email": "dalibor.pavlik@gmail.com",
+      "streetName": "Dubinská",
+      "streetNumber": "756",
+      "city": "Pardubice",
+      "province": "Česká republika",
+      "state": "Česko",
+      "zipCode": "53012",
+      "id": 6
+    },
+    {
+      "firstName": "Dalibor",
+      "secondName": "Pavlík",
+      "email": "dalibor.pavlik@gmail.com",
+      "streetName": "Dubinská",
+      "streetNumber": "756",
+      "city": "Pardubice",
+      "province": "Česká republika",
+      "state": "Česko",
+      "zipCode": "53012",
+      "id": 7
+    },
+    {
+      "firstName": "Dalibor",
+      "secondName": "Pavlík",
+      "email": "dalibor.pavlik@gmail.com",
+      "streetName": "Dubinská",
+      "streetNumber": "756",
+      "city": "Pardubice",
+      "province": "Česká republika",
+      "state": "Česko",
+      "zipCode": "53012",
+      "id": 8
+    }
+  ],
+  "address": [
+    {
+      "firstName": "",
+      "secondName": "",
+      "email": "",
+      "streetName": "",
+      "streetNumber": "",
+      "city": "",
+      "province": "",
+      "state": "",
+      "zipCode": "",
+      "id": 1
+    },
+    {
+      "firstName": "",
+      "secondName": "",
+      "email": "",
+      "streetName": "",
+      "streetNumber": "",
+      "city": "",
+      "province": "",
+      "state": "",
+      "zipCode": "",
+      "id": 2
+    },
+    {
+      "firstName": "",
+      "secondName": "",
+      "email": "",
+      "streetName": "",
+      "streetNumber": "",
+      "city": "",
+      "province": "",
+      "state": "",
+      "zipCode": "",
+      "id": 3
+    },
+    {
+      "firstName": "",
+      "secondName": "",
+      "email": "",
+      "streetName": "",
+      "streetNumber": "",
+      "city": "",
+      "province": "",
+      "state": "",
+      "zipCode": "",
+      "id": 4
+    },
+    {
+      "firstName": "Dalibor",
+      "secondName": "Pavlík",
+      "email": "dalibor.pavlik@gmail.com",
+      "streetName": "Dubinská",
+      "streetNumber": "756",
+      "city": "Pardubice",
+      "province": "Česká republika",
+      "state": "Česko",
+      "zipCode": "53012",
+      "id": 5
+    },
+    {
+      "firstName": "Dalibor",
+      "secondName": "Pavlík",
+      "email": "dalibor.pavlik@gmail.com",
+      "streetName": "Dubinská",
+      "streetNumber": "756",
+      "city": "Pardubice",
+      "province": "Česká republika",
+      "state": "Česko",
+      "zipCode": "53012",
+      "id": 6
+    },
+    {
+      "firstName": "Dalibor",
+      "secondName": "Pavlík",
+      "email": "dalibor.pavlik@gmail.com",
+      "streetName": "Dubinská",
+      "streetNumber": "756",
+      "city": "Pardubice",
+      "province": "Česká republika",
+      "state": "Česko",
+      "zipCode": "53012",
+      "id": 7
+    },
+    {
+      "firstName": "Dalibor",
+      "secondName": "Pavlík",
+      "email": "dalibor.pavlik@gmail.com",
+      "streetName": "Dubinská",
+      "streetNumber": "756",
+      "city": "Pardubice",
+      "province": "Česká republika",
+      "state": "Česko",
+      "zipCode": "53012",
+      "id": 8
     }
   ]
 }

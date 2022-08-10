@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Product from "./Product";
 import { useSelector } from "react-redux";
 import CartItems from "./CartItems";
-import { useNavigate, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 //images
 import garlic from "../../images/garlic.jpg";
@@ -52,10 +52,18 @@ const FRUTIS_VEGETABLES = [
 ];
 
 const Products = () => {
-  const navigate = useNavigate();
   let total = 0;
   const showCart = useSelector((state) => state.cart.showCart);
   const itemsList = useSelector((state) => state.cart.itemsList);
+  console.log(itemsList);
+
+  //set localStorage
+  useEffect(
+    function () {
+      localStorage.setItem("itemsList", JSON.stringify(itemsList));
+    },
+    [itemsList]
+  );
 
   itemsList.forEach((item) => {
     total += item.totalPrice;

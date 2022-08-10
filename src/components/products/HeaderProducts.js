@@ -1,8 +1,30 @@
-import React from "react";
-import Cart from "./Cart";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { cartActions } from "../../store/cartSlice";
+
 import "./HeaderProducts.css";
 
 const HeaderProducts = () => {
+  const dispatch = useDispatch();
+
+  const toggleCart = () => {
+    dispatch(cartActions.setShowCart());
+
+    //change button innerHTML
+    const buttonCart = document.querySelector(".button");
+    console.log(buttonCart);
+    let displayCart = buttonCart.innerHTML;
+    console.log(displayCart);
+
+    if (displayCart === "Show Cart") {
+      buttonCart.innerHTML = "Hide Cart";
+      buttonCart.classList.toggle("hide-cart");
+    } else {
+      buttonCart.innerHTML = "Show Cart";
+      buttonCart.classList.toggle("hide-cart");
+    }
+  };
+
   return (
     <header>
       <nav className="header-products-container">
@@ -33,8 +55,8 @@ const HeaderProducts = () => {
             </h2>
           </li>
 
-          <li className="cart">
-            <Cart />
+          <li className="cartIcon" onClick={toggleCart}>
+            <button className="button">Show Cart</button>
           </li>
         </ul>
       </nav>

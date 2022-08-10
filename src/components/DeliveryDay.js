@@ -6,7 +6,7 @@ import { v4 as uuidv4 } from "uuid";
 import { sleep } from "../functions/sleep";
 
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { deliveryActions } from "../store/deliverySlice";
 
 //images
@@ -15,19 +15,27 @@ import right from "../images/arrow-right-circle-fill.svg";
 import smile from "../images/emoji-smile-fill.svg";
 
 const DeliveryDay = () => {
-  const deliveryDayStore = useSelector((state) => state.delivery.deliveryDay);
-  const [deliveryDay, setDeliveryDay] = useState(deliveryDayStore);
   const dispatch = useDispatch();
+  const [deliveryDate, setDeliveryDate] = useState("");
 
   useEffect(() => {
-    dispatch(deliveryActions.setDeliveryDate(deliveryDay));
-  }, [dispatch, deliveryDay]);
+    const lsParse = JSON.parse(localStorage.getItem("deliveryDate"));
+    setDeliveryDate(lsParse);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("deliveryDate", JSON.stringify(deliveryDate));
+  }, [deliveryDate]);
+
+  useEffect(() => {
+    dispatch(deliveryActions.setDeliveryDate(deliveryDate));
+  }, [dispatch, deliveryDate]);
 
   async function noChoice(e) {
-    const deliveryDayLength = Object.keys(deliveryDay).length;
+    const deliveryDayLength = Object.keys(deliveryDate).length;
 
     if (deliveryDayLength === 0) {
-      e.preventDefault();
+      //e.preventDefault();
       const x = document.querySelector(".please-make-a-choice");
 
       x.classList.add("alert-hidden");
@@ -40,16 +48,14 @@ const DeliveryDay = () => {
     return (
       <div key={uuidv4()} className={"delivery-day-item " + arrDate.class}>
         <label>{arrDate.weekDay + " " + arrDate.date}</label>
-
         <input
           type="radio"
           name="button"
-          value={arrDate}
-          checked={arrDate === deliveryDay}
+          value={arrDate.date}
+          checked={arrDate.date === deliveryDate}
           onChange={(e) => {
-            setDeliveryDay(arrDate);
-
-            console.log("ahojdfdsa");
+            console.log(arrDate);
+            setDeliveryDate(arrDate.date);
           }}
         />
       </div>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { deliveryActions } from "../store/deliverySlice";
-import { useDispatch } from "react-redux";
+
+import { useDispatch, useSelector } from "react-redux";
 import useForm from "../hooks/useForm";
 
 import Header from "./Header";
@@ -11,13 +11,7 @@ import left from "../images/arrow-left-circle-fill.svg";
 import right from "../images/arrow-right-circle-fill.svg";
 
 const Address = (props) => {
-  const dispatch = useDispatch();
-
-  const { handleChange, address, handleArrowClick } = useForm();
-
-  useEffect(() => {
-    dispatch(deliveryActions.setDeliveryAddress(address));
-  }, [dispatch, address]);
+  const { handleChange, handleArrowClick, address } = useForm();
 
   return (
     <div className="address-container">

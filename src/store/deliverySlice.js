@@ -4,17 +4,31 @@ const deliverySlice = createSlice({
   name: "delivery",
 
   initialState: {
-    deliveryAddress: {},
+    deliveryAddress: {
+      firstName: "",
+      secondName: "",
+      email: "",
+      streetName: "",
+      streetNumber: "",
+      city: "",
+      province: "",
+      state: "",
+      zipCode: "",
+    },
     deliveryDay: {},
     deliveryService: "",
     deliveryTime: "",
   },
 
   reducers: {
+    setDelivery(state, action) {
+      const delivery = action.payload;
+
+      state = delivery;
+    },
     setDeliveryAddress(state, action) {
       const deliveryAddress = action.payload;
       state.deliveryAddress = deliveryAddress;
-      //console.log(current(state));
     },
 
     setDeliveryDate(state, action) {
@@ -25,15 +39,11 @@ const deliverySlice = createSlice({
     setDeliveryTime(state, action) {
       const deliveryTime = action.payload;
       state.deliveryTime = deliveryTime;
-      console.log(current(state));
     },
 
     setDeliveryService(state, action) {
       const deliveryService = action.payload;
-      console.log(deliveryService);
-
       state.deliveryService = deliveryService;
-      console.log(state.deliveryService);
     },
   },
 });

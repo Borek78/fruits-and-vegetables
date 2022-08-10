@@ -1,17 +1,43 @@
 import { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { deliveryActions } from "../store/deliverySlice";
 
-const useForm = (callback) => {
+const useForm = () => {
+  const dispatch = useDispatch();
   //prettier-ignore
-  const initialValues = { firstName: "", secondName: "", email: "",
-    streetName: "", streetNumber: "", city: "", province: "", state: "", zipCode: "",
-  };
+  const initialValues = {firstName: "", secondName: "", email: "",
+   streetName: "", streetNumber: "", city: "", province: "", state: "",
+   zipCode: "",
+ };
   const [address, setAddress] = useState(initialValues);
-  console.log("ADDRESS");
   console.log(address);
+
+  // get localStorage
+  useEffect(() => {
+    if (localStorage.getItem("address") !== null) {
+      const lsAddress = JSON.parse(localStorage.getItem("address"));
+      console.log(lsAddress);
+      setAddress(lsAddress);
+    }
+  }, []);
+
+  //set localStorage
+  useEffect(
+    function () {
+      localStorage.setItem("address", JSON.stringify(address));
+    },
+    [address]
+  );
+
+  //save address to store
+  useEffect(() => {
+    dispatch(deliveryActions.setDeliveryAddress(address));
+  }, [dispatch, address]);
 
   const handleArrowClick = (e) => {
     let x = 0;
     console.log(x);
+
     //first name
     const fnSpan = document.querySelector(".first-name-span ");
     const fnLng = address.firstName.length;
@@ -35,6 +61,10 @@ const useForm = (callback) => {
     //email
     const emailSpan = document.querySelector(".email-span ");
     const emailLng = address.email.length;
+    const emailValue = address.email;
+    const emailValid = !new RegExp(
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    ).test(emailValue);
 
     if (emailLng === 0) {
       emailSpan.innerHTML = "We need your email.";
@@ -42,10 +72,14 @@ const useForm = (callback) => {
       console.log(x);
     }
 
+    if (emailValid) {
+      emailSpan.innerHTML = "Enter valid email address.";
+      x++;
+    }
+
     //street
     const streetNameSpan = document.querySelector(".street-name-span ");
     const streetNameLng = address.streetName.length;
-    const streetNumberSpan = document.querySelector(".street-number-span ");
     const streetNumberLng = address.streetNumber.length;
 
     if (streetNumberLng === 0 || streetNameLng === 0) {
@@ -95,7 +129,6 @@ const useForm = (callback) => {
     //setAddress
     let name = event.target.name;
     let val = event.target.value;
-
     setAddress({
       ...address,
       [name]: val,
@@ -123,7 +156,7 @@ const useForm = (callback) => {
       //street
       const streetNameSpan = document.querySelector(".street-name-span ");
       const streetNameLng = address.streetName.length;
-      const streetNumberSpan = document.querySelector(".street-number-span ");
+
       const streetNumberLng = address.streetNumber.length;
 
       if (streetNumberLng === 0 && streetNameLng > 0) {

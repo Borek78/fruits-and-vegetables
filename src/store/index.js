@@ -1,6 +1,7 @@
 import cartSlice from "./cartSlice";
 import deliverySlice from "./deliverySlice";
 
+//redux-persist
 import { configureStore } from "@reduxjs/toolkit";
 
 const store = configureStore({

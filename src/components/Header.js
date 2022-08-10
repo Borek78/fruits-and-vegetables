@@ -1,7 +1,13 @@
 import React from "react";
 import "./Header.css";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const navigate = useNavigate();
+  const toProducts = () => {
+    navigate("/");
+  };
+
   return (
     <header>
       <nav className="header-container">
@@ -30,6 +36,11 @@ const Header = () => {
               <span className="green">e</span>
               <span className="green">s</span>
             </h2>
+          </li>
+          <li className="li-button">
+            <button onClick={toProducts} className="back-to-products">
+              Back to Products
+            </button>
           </li>
         </ul>
       </nav>
