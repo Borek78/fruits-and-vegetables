@@ -16,23 +16,28 @@ import smile from "../images/emoji-smile-fill.svg";
 
 const DeliveryDay = () => {
   const dispatch = useDispatch();
-  const [deliveryDate, setDeliveryDate] = useState("");
 
+  const [deliveryDay, setDeliveryDay] = useState({});
+  console.log(deliveryDay);
+
+  //get delivery date from localStorage
   useEffect(() => {
-    const lsParse = JSON.parse(localStorage.getItem("deliveryDate"));
-    setDeliveryDate(lsParse);
+    const lsParse = JSON.parse(localStorage.getItem("deliveryDay"));
+    setDeliveryDay(lsParse);
   }, []);
 
+  // set deliveryDate to localStorage
   useEffect(() => {
-    localStorage.setItem("deliveryDate", JSON.stringify(deliveryDate));
-  }, [deliveryDate]);
+    localStorage.setItem("deliveryDay", JSON.stringify(deliveryDay));
+  }, [deliveryDay]);
 
+  // dispatch delivery date to store
   useEffect(() => {
-    dispatch(deliveryActions.setDeliveryDate(deliveryDate));
-  }, [dispatch, deliveryDate]);
+    dispatch(deliveryActions.setDeliveryDay(deliveryDay));
+  }, [dispatch, deliveryDay]);
 
   async function noChoice(e) {
-    const deliveryDayLength = Object.keys(deliveryDate).length;
+    const deliveryDayLength = Object.keys(deliveryDay).length;
 
     if (deliveryDayLength === 0) {
       //e.preventDefault();
@@ -52,10 +57,9 @@ const DeliveryDay = () => {
           type="radio"
           name="button"
           value={arrDate.date}
-          checked={arrDate.date === deliveryDate}
+          checked={arrDate.date === deliveryDay.date}
           onChange={(e) => {
-            console.log(arrDate);
-            setDeliveryDate(arrDate.date);
+            setDeliveryDay(arrDate);
           }}
         />
       </div>

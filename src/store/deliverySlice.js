@@ -18,13 +18,13 @@ const deliverySlice = createSlice({
     deliveryDay: {},
     deliveryService: "",
     deliveryTime: "",
+    deliveryDate: "",
   },
 
   reducers: {
-    setDelivery(state, action) {
-      const delivery = action.payload;
-
-      state = delivery;
+    setDeliveryDay(state, action) {
+      const deliveryDay = action.payload;
+      state.deliveryDay = deliveryDay;
     },
     setDeliveryAddress(state, action) {
       const deliveryAddress = action.payload;
@@ -32,12 +32,13 @@ const deliverySlice = createSlice({
     },
 
     setDeliveryDate(state, action) {
-      const deliveryDay = action.payload;
-      state.deliveryDay = deliveryDay;
+      const deliveryDate = action.payload;
+      state.deliveryDate = deliveryDate;
     },
 
     setDeliveryTime(state, action) {
       const deliveryTime = action.payload;
+      console.log(deliveryTime);
       state.deliveryTime = deliveryTime;
     },
 

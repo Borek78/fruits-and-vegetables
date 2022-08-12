@@ -16,11 +16,38 @@ import smile from "../images/emoji-smile-fill.svg";
 const DeliveryService = () => {
   const dispatch = useDispatch();
 
+  //import state from store
   const deliveryServiceStore = useSelector(
     (state) => state.delivery.deliveryService
   );
+  const itemsListStore = useSelector((state) => state.cart.itemsList);
+  console.log(itemsListStore);
 
+  let sumOfTotalPrice = 0;
+
+  itemsListStore.forEach((item) => {
+    sumOfTotalPrice += item.totalPrice;
+  });
+
+  console.log(sumOfTotalPrice);
+
+  //define local state
   const [deliveryService, setDeliveryService] = useState(deliveryServiceStore);
+
+  //on first render
+
+  useEffect(() => {
+    const lsDeliveryService = JSON.parse(
+      localStorage.getItem("deliveryService")
+    );
+    setDeliveryService(lsDeliveryService);
+  });
+
+  //when deliveryService changes
+  useEffect(() => {
+    dispatch(deliveryActions.setDeliveryService(deliveryService));
+    localStorage.setItem("deliveryService", JSON.stringify(deliveryService));
+  }, [dispatch, deliveryService]);
 
   async function noChoice(e) {
     // const deliveryTimeLength = Object.keys(deliveryDay).length;
@@ -36,10 +63,6 @@ const DeliveryService = () => {
     }
   }
 
-  useEffect(() => {
-    dispatch(deliveryActions.setDeliveryService(deliveryService));
-  }, [dispatch, deliveryService]);
-
   return (
     <div className="delivery-service-container">
       <Header />
@@ -48,7 +71,10 @@ const DeliveryService = () => {
         <h2>Delivery Service</h2>
         <div className="list-of-delivery-services">
           <div key={uuidv4()} className="delivery-service-item">
-            <label>Santa Claus - 35$</label>
+            <label>
+              Santa Claus - {sumOfTotalPrice <= 100 && "35$."}
+              {sumOfTotalPrice > 100 && "0$."}
+            </label>
             <input
               type="radio"
               name="deliveryTime"
@@ -59,7 +85,10 @@ const DeliveryService = () => {
             />
           </div>
           <div key={uuidv4()} className="delivery-service-item">
-            <label>Local Witches - 35$</label>
+            <label>
+              Santa Claus - {sumOfTotalPrice <= 100 && "35$."}
+              {sumOfTotalPrice > 100 && "0$."}
+            </label>
             <input
               type="radio"
               checked={deliveryService === "Local Witches"}
@@ -71,7 +100,10 @@ const DeliveryService = () => {
           </div>
         </div>
         <div className="free-delivery-is-available">
-          *free delivery available for orders over 100$.
+          {sumOfTotalPrice <= 100 &&
+            "*free delivery available for orders over 100$."}
+          {sumOfTotalPrice > 100 &&
+            "*your order is more than 100$ and you are eligible for free delivery"}
         </div>
 
         <div className="alert please-make-a-choice">

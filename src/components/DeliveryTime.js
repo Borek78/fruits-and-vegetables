@@ -14,16 +14,31 @@ import right from "../images/arrow-right-circle-fill.svg";
 import smile from "../images/emoji-smile-fill.svg";
 
 const DeliveryTime = () => {
-  const deliveryTimeInStore = useSelector(
-    (state) => state.delivery.deliveryTime
-  );
-  console.log(deliveryTimeInStore);
-
-  const [deliveryTime, setDeliveryTime] = useState(deliveryTimeInStore);
-
-  const deliveryDay = useSelector((state) => state.delivery.deliveryDay);
-  console.log(deliveryDay);
   const dispatch = useDispatch();
+
+  //import states from store
+  const deliveryTimeStore = useSelector((state) => state.delivery.deliveryTime);
+  const deliveryDayStore = useSelector((state) => state.delivery.deliveryDay);
+
+  //define local states
+  const [deliveryTime, setDeliveryTime] = useState(deliveryTimeStore);
+  const [deliveryDay, setDeliveryDay] = useState(deliveryDayStore);
+
+  //on first render
+  useEffect(() => {
+    const lsDeliveryDay = JSON.parse(localStorage.getItem("deliveryDay"));
+    console.log(lsDeliveryDay);
+    setDeliveryDay(lsDeliveryDay);
+
+    const lsDeliveryTime = JSON.parse(localStorage.getItem("deliveryTime"));
+    setDeliveryTime(lsDeliveryTime);
+  }, []);
+
+  //when deliveryTime changes
+  useEffect(() => {
+    dispatch(deliveryActions.setDeliveryTime(deliveryTime));
+    localStorage.setItem("deliveryTime", JSON.stringify(deliveryTime));
+  }, [deliveryTime, dispatch]);
 
   async function noChoice(e) {
     // const deliveryTimeLength = Object.keys(deliveryDay).length;

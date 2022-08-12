@@ -10,8 +10,10 @@ const cartSlice = createSlice({
   },
 
   reducers: {
-    consoleF() {
-      console.log("I am in consoleF");
+    updateItemsList(state, action) {
+      const newItemsList = action.payload;
+      console.log(newItemsList);
+      state.itemsList = newItemsList;
     },
 
     replaceData(state, action) {

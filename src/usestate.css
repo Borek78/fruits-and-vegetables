@@ -1,0 +1,12 @@
+body {
+  height: 100vh;
+}
+
+div {
+  display: grid;
+  place-self: center;
+}
+
+#root {
+  height: 100vh;
+}

@@ -1,8 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Product from "./Product";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import CartItems from "./CartItems";
 import { Link } from "react-router-dom";
+import { cartActions } from "../../store/cartSlice";
 
 //images
 import garlic from "../../images/garlic.jpg";
@@ -22,52 +23,65 @@ const FRUTIS_VEGETABLES = [
     price: 9,
   },
 
-  {
-    id: 2,
-    name: "Onion",
-    imgURL: onion,
-    price: 3,
-  },
+  // {
+  //   id: 2,
+  //   name: "Onion",
+  //   imgURL: onion,
+  //   price: 3,
+  // },
 
-  {
-    id: 3,
-    name: "Carrot",
-    imgURL: carrot,
-    price: 4,
-  },
+  // {
+  //   id: 3,
+  //   name: "Carrot",
+  //   imgURL: carrot,
+  //   price: 4,
+  // },
 
-  {
-    id: 4,
-    name: "Apple",
-    imgURL: apple,
-    price: 5,
-  },
+  // {
+  //   id: 4,
+  //   name: "Apple",
+  //   imgURL: apple,
+  //   price: 5,
+  // },
 
-  {
-    id: 5,
-    name: "Peach",
-    imgURL: peach,
-    price: 7,
-  },
+  // {
+  //   id: 5,
+  //   name: "Peach",
+  //   imgURL: peach,
+  //   price: 7,
+  // },
 ];
 
 const Products = () => {
+  const dispatch = useDispatch();
   let total = 0;
   const showCart = useSelector((state) => state.cart.showCart);
-  const itemsList = useSelector((state) => state.cart.itemsList);
-  console.log(itemsList);
+  let itemsListS = useSelector((state) => state.cart.itemsList);
 
-  //set localStorage
-  useEffect(
-    function () {
-      localStorage.setItem("itemsList", JSON.stringify(itemsList));
-    },
-    [itemsList]
-  );
+  console.log("I am in products");
+  console.log(itemsListS);
 
-  itemsList.forEach((item) => {
+  // Place store value to a local state
+  const [itemsList, setItemsList] = useState([]);
+
+  useEffect(() => {
+    setItemsList(itemsListS);
+  }, [itemsListS]);
+
+  //get itemsList from local storage and set it to local ItemsList
+  // const lsItemsList = JSON.parse(localStorage.getItem("itemsList"));
+
+  // useEffect(() => {
+  //   setItemsList(lsItemsList);
+  //   dispatch(cartActions.updateItemsList(lsItemsList));
+  // }, []);
+
+  //calculate the sum of prices
+
+  itemsListS.forEach((item) => {
     total += item.totalPrice;
   });
+  console.log(total);
 
   return (
     <div>

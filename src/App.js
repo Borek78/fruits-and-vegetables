@@ -1,6 +1,8 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
+import React, { useEffect, useState } from "react";
+
 //Pages
 import Products from "./components/products/Products";
 import Address from "./components/Address";
@@ -10,7 +12,6 @@ import DeliveryService from "./components/DeliveryService";
 import Summary from "./components/Summary";
 
 const App = () => {
-  const itemsList = useSelector(() => {});
   return (
     <div className="wrapper">
       <Router>
