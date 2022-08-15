@@ -10,6 +10,7 @@ const CartItems = () => {
   //import store states
   const showCart = useSelector((state) => state.cart.showCart);
   const cartItems = useSelector((state) => state.cart.itemsList);
+  console.log(cartItems);
 
   // Place store value to a local state
   const [itemsList, setItemsList] = useState(cartItems);
@@ -18,18 +19,22 @@ const CartItems = () => {
   const length = itemsList.length;
   console.log(length);
 
+  useEffect(() => {
+    setItemsList(cartItems);
+  }, [cartItems]);
+
   //on first render, get the localStorage and place it in local state
 
   useEffect(() => {
     const lsItemsList = JSON.parse(localStorage.getItem("itemsList"));
     setItemsList(lsItemsList);
-    // dispatch(cartActions.updateItemsList(lsItemsList));
   }, []);
 
   //when itemsList changes
   useEffect(() => {
     localStorage.setItem("itemsList", JSON.stringify(itemsList));
-  }, [itemsList]);
+    dispatch(cartActions.updateItemsList(itemsList));
+  }, [itemsList, dispatch]);
 
   return (
     <div className="cart-container">

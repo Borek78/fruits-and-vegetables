@@ -2,15 +2,12 @@ import "./usestate.css";
 import React, { useState } from "react";
 
 function App() {
-  const [number, setNumber] = useState(0);
+  const [user, setUser] = useState({});
 
-  function increment() {
-    setNumber(number + 1);
-  }
   return (
     <div>
-      <button onClick={increment}>Increment</button>
-      <h1>{number}</h1>
+      <h2>User</h2>
+      <span>username is: {user.name}</span>
     </div>
   );
 }

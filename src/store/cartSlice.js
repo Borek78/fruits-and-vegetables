@@ -13,6 +13,7 @@ const cartSlice = createSlice({
     updateItemsList(state, action) {
       const newItemsList = action.payload;
       console.log(newItemsList);
+
       state.itemsList = newItemsList;
     },
 
@@ -26,11 +27,14 @@ const cartSlice = createSlice({
       state.changed = true;
       const newItem = action.payload;
       console.log(newItem);
+      // console.log(current(state.itemsList));
 
       //existing Item check
       const existingItem = state.itemsList.find((item) => {
         return newItem.id === item.id;
       });
+
+      console.log(existingItem);
 
       if (existingItem) {
         existingItem.quantity++;
@@ -53,22 +57,15 @@ const cartSlice = createSlice({
       const removedItemId = action.payload;
       state.changed = true;
 
-      console.log(removedItemId);
-
       //find the deleted item in ItemsList
       const removedItem = state.itemsList.find((item) => {
         return removedItemId === item.id;
       });
-      console.log(current(removedItem));
-
-      const x = removedItem.quantity;
-      console.log(x);
 
       if (removedItem.quantity === 1) {
         const newItemsList = state.itemsList.filter((item) => {
           return item.id !== removedItemId;
         });
-        console.log(newItemsList);
         state.itemsList = newItemsList;
         state.totalQuantity--;
       } else {
@@ -77,8 +74,11 @@ const cartSlice = createSlice({
       }
     },
 
-    setShowCart(state) {
-      state.showCart = !state.showCart;
+    setShowCart(state, action) {
+      console.log("ahoj");
+      const newCartState = action.payload;
+      console.log(newCartState);
+      state.showCart = newCartState;
     },
   },
 });

@@ -33,15 +33,15 @@ const DeliveryService = () => {
 
   //define local state
   const [deliveryService, setDeliveryService] = useState(deliveryServiceStore);
+  console.log(deliveryService);
 
   //on first render
-
   useEffect(() => {
     const lsDeliveryService = JSON.parse(
       localStorage.getItem("deliveryService")
     );
     setDeliveryService(lsDeliveryService);
-  });
+  }, []);
 
   //when deliveryService changes
   useEffect(() => {
@@ -52,7 +52,7 @@ const DeliveryService = () => {
   async function noChoice(e) {
     // const deliveryTimeLength = Object.keys(deliveryDay).length;
 
-    if (deliveryService === "") {
+    if (deliveryService === null) {
       e.preventDefault();
 
       const x = document.querySelector(".please-make-a-choice");

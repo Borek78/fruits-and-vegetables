@@ -12,14 +12,15 @@ const HeaderProducts = () => {
 
     //change button innerHTML
     const buttonCart = document.querySelector(".button");
-    console.log(buttonCart);
+
     let displayCart = buttonCart.innerHTML;
-    console.log(displayCart);
 
     if (displayCart === "Show Cart") {
+      dispatch(cartActions.setShowCart(true));
       buttonCart.innerHTML = "Hide Cart";
       buttonCart.classList.toggle("hide-cart");
     } else {
+      dispatch(cartActions.setShowCart(false));
       buttonCart.innerHTML = "Show Cart";
       buttonCart.classList.toggle("hide-cart");
     }

@@ -23,12 +23,15 @@ const DeliveryTime = () => {
   //define local states
   const [deliveryTime, setDeliveryTime] = useState(deliveryTimeStore);
   const [deliveryDay, setDeliveryDay] = useState(deliveryDayStore);
+  console.log(deliveryTime);
 
   //on first render
   useEffect(() => {
-    const lsDeliveryDay = JSON.parse(localStorage.getItem("deliveryDay"));
-    console.log(lsDeliveryDay);
-    setDeliveryDay(lsDeliveryDay);
+    if (localStorage.getItem("deliveryDay") !== null) {
+      const lsDeliveryDay = JSON.parse(localStorage.getItem("deliveryDay"));
+      console.log(lsDeliveryDay);
+      setDeliveryDay(lsDeliveryDay);
+    }
 
     const lsDeliveryTime = JSON.parse(localStorage.getItem("deliveryTime"));
     setDeliveryTime(lsDeliveryTime);
@@ -41,9 +44,9 @@ const DeliveryTime = () => {
   }, [deliveryTime, dispatch]);
 
   async function noChoice(e) {
-    // const deliveryTimeLength = Object.keys(deliveryDay).length;
-    console.log(deliveryTime);
-    if (deliveryTime === "") {
+    const deliveryTimeLength = Object.keys(deliveryDay).length;
+    console.log(deliveryTimeLength);
+    if (deliveryTime === null) {
       e.preventDefault();
       console.log("vyber time");
       const x = document.querySelector(".please-make-a-choice");

@@ -10,3 +10,7 @@ div {
 #root {
   height: 100vh;
 }
+
+button {
+  margin-bottom: 2rem;
+}

@@ -8,12 +8,12 @@
   left: -3rem;
 }
 
-.make-your-choice {
+.delivery-day-container .make-your-choice {
   position: relative;
   left: -2rem;
 }
 
-.alert {
+.delivery-day-container .alert {
   width: 20rem;
   height: 5rem;
   position: fixed;

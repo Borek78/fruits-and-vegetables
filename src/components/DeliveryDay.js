@@ -22,8 +22,10 @@ const DeliveryDay = () => {
 
   //get delivery date from localStorage
   useEffect(() => {
-    const lsParse = JSON.parse(localStorage.getItem("deliveryDay"));
-    setDeliveryDay(lsParse);
+    if (localStorage.getItem("deliveryDay") !== null) {
+      const lsParse = JSON.parse(localStorage.getItem("deliveryDay"));
+      setDeliveryDay(lsParse);
+    }
   }, []);
 
   // set deliveryDate to localStorage
@@ -38,9 +40,10 @@ const DeliveryDay = () => {
 
   async function noChoice(e) {
     const deliveryDayLength = Object.keys(deliveryDay).length;
+    console.log(deliveryDayLength);
 
     if (deliveryDayLength === 0) {
-      //e.preventDefault();
+      e.preventDefault();
       const x = document.querySelector(".please-make-a-choice");
 
       x.classList.add("alert-hidden");
