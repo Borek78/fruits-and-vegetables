@@ -1,39 +1,276 @@
-.summary button {
-  background-color: rgb(239, 108, 15);
-  padding: 2rem;
+/*address and time*/
+.address-and-time {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: baseline;
+  order: 1px solid blue;
+  justify-items: center;
 }
+
+.address-and-time div {
+  order: 1px solid blue;
+}
+/*Delivery Time*/
+.delivery-time-heading {
+  border: 2px solid white;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  border-radius: 10px;
+  margin-bottom: 3rem;
+  font-weight: bold;
+}
+
+.delivery-time {
+  margin-bottom: 8rem;
+  margin-inline: auto;
+  width: fit-content;
+  color: rgb(72, 173, 72);
+  background-color: rgb(246, 214, 132);
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.delivery-time div {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  text-align: center;
+}
+
+/*address*/
+
+.display-none {
+  display: none;
+}
+
+.heading-delivery-address {
+  font-size: 1.8rem;
+  text-align: center;
+  color: rgb(72, 173, 72);
+  font-weight: bold;
+
+  border: 2px solid white;
+
+  border-radius: 10px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 1rem;
+
+  margin-bottom: 3rem;
+}
+.delivery-address {
+  margin-bottom: 8rem;
+  background-color: rgb(246, 214, 132);
+  color: rgb(72, 173, 72);
+  width: fit-content;
+
+  padding: 2rem;
+  border-radius: 10px;
+  margin-inline: auto;
+}
+
+.delivery-address div {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+/*order-total*/
+.strong {
+  font-weight: bolder;
+  font-size: 2rem;
+}
+
+.order-total {
+  margin-top: 8rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 4px solid rgb(246, 214, 132);
+  color: rgb(72, 173, 72);
+  gap: 1px;
+  background-color: rgb(255, 233, 179);
+  border-radius: 10px;
+}
+
+.order-total div {
+  height: 4rem;
+  background-color: rgb(246, 214, 132);
+
+  display: grid;
+  place-items: center;
+}
+
+/*delivery-service-table*/
+.delivery-service-table {
+  display: grid;
+  grid-template-columns: 72% 28%;
+  color: rgb(72, 173, 72);
+  height: 4rem;
+  border: 4px solid rgb(246, 214, 132);
+  width: 70%;
+  border-radius: 10px;
+  float: right;
+}
+
+.delivery-service-table span {
+  display: grid;
+  place-items: center;
+  background-color: rgb(246, 214, 132);
+}
+
+.ds-wrapper {
+  margin-top: 8rem;
+  height: 4rem;
+  width: 100%;
+}
+
+/*.sub-total*/
+
+.the-last-two div {
+  display: grid;
+  place-items: center;
+}
+
+.the-last-two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: rgb(246, 214, 132);
+  border: 2px solid rgb(246, 214, 132);
+  border-radius: 10px;
+}
+.white {
+  background-color: white;
+}
+
+.sub-total {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 2fr;
+
+  color: rgb(72, 173, 72);
+  height: 4rem;
+
+  font-size: 1.8rem;
+}
+
+.sub-total div {
+  width: 100%;
+  height: 100%;
+}
+
+/*table-cart*/
+.cart-table-cart-heading {
+  display: grid;
+  height: 7rem;
+  place-items: center;
+
+  color: rgb(72, 173, 72);
+
+  order: 1px solid blue;
+
+  background-color: rgb(246, 214, 132);
+}
+
+.cart-table-cart-heading div {
+  border: 2px solid white;
+
+  font-weight: bold;
+  padding: 0.5rem 2rem 0.5rem 2rem;
+  border-radius: 10px;
+  margin-top: -0.4rem;
+}
+
+.summary h3 {
+  font-size: 1.8rem;
+  color: rgb(255, 207, 86);
+}
+
+.cart-table {
+  background-color: rgb(255, 233, 179);
+  color: rgb(72, 173, 72);
+  font-size: 1.8rem;
+  border: 4px solid rgb(246, 214, 132);
+  border-radius: 10px;
+}
+
+.cart-table-header {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1px;
+  border-top: 1px solid rgb(255, 233, 179);
+}
+
+.cart-table-header div {
+  display: grid;
+  background-color: rgb(246, 214, 132);
+  width: 100%;
+  place-items: center;
+  height: 4rem;
+}
+
+.cart-table-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1px;
+  border-top: 1px solid rgb(255, 233, 179);
+}
+
+.cart-table-row div {
+  display: grid;
+  background-color: rgb(246, 214, 132);
+  width: 100%;
+  place-items: center;
+  height: 3.5rem;
+}
+
+/*Place order button*/
 
 .items {
   width: 20rem;
   height: 30rem;
-  border: 1px solid grey;
+  order: 1px solid grey;
 }
 
 .summary {
   width: 60rem;
   margin-inline: auto;
+  order: 1px solid blue;
+  font-size: 1.8rem;
 }
 
 .summary h1 {
   text-align: center;
-  font-size: 2.2rem;
+  font-size: 2.8rem;
+
+  color: rgb(127, 95, 0);
   background-color: rgb(72, 173, 72);
   color: white;
-  margin-bottom: 2.3rem;
 
-  padding: 0.5rem;
-
-  width: rem;
+  width: 100%;
   margin-inline: auto;
 
-  border-radius: 5px;
-}
-
-.summary h2 {
-  font-size: 2rem;
+  border-radius: 10px;
+  padding: 0.5rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  margin-bottom: 6rem;
 }
 
 /*Arrows*/
+
+.link-right-arrow {
+  align-self: center;
+}
+
+.summary button {
+  background-color: rgb(239, 108, 15);
+  padding: 1rem;
+  margin: 0rem;
+  width: 15rem;
+}
+
+.summary button:hover {
+  filter: brightness(120%);
+}
+
 .summary .arrows {
   margin-top: 6rem;
   display: grid;
@@ -41,7 +278,7 @@
   margin-bottom: 7rem;
   width: 17rem;
   margin-inline: auto;
-  border: 1px solid blue;
+  order: 1px solid blue;
 }
 
 .summary .arrows .left-arrow,

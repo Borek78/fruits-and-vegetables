@@ -96,7 +96,7 @@ const Products = () => {
     dispatch(cartActions.setShowCart(false));
 
     buttonCart.innerHTML = "Show Cart";
-    buttonCart.classList.add("hide-cart");
+    buttonCart.classList.remove("hide-cart");
   }
 
   async function noChoice(e) {

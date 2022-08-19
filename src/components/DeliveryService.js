@@ -86,7 +86,7 @@ const DeliveryService = () => {
           </div>
           <div key={uuidv4()} className="delivery-service-item">
             <label>
-              Santa Claus - {sumOfTotalPrice <= 100 && "35$."}
+              Local Witches - {sumOfTotalPrice <= 100 && "35$."}
               {sumOfTotalPrice > 100 && "0$."}
             </label>
             <input
