@@ -106,19 +106,6 @@ main.delivery-service-main h2 {
   text-align: center;
 }
 
-.delivery-time-item.delivery-date {
-  border: px solid white;
-  width: 16rem;
-  background-color: rgb(246, 214, 132);
-  margin-inline: auto;
-  border-radius: 10px;
-
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-  margin-bottom: 3rem;
-}
-
 .delivery-service-container input {
   margin-top: 0rem;
   padding: 1rem;
