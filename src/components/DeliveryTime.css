@@ -77,7 +77,6 @@ main.delivery-time h2 {
 }
 
 .delivery-time-item.delivery-date {
-  border: px solid white;
   width: 16rem;
   background-color: rgb(246, 214, 132);
   margin-inline: auto;
