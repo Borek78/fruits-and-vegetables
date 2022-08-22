@@ -1,19 +1,14 @@
 .delivery-time-container .alert {
   width: 20rem;
   height: 5rem;
-
   position: fixed;
   top: 40%;
   right: -20rem;
-
   transition: 1s;
-
   border-radius: 2rem;
   font-size: 1.6rem;
-
   color: white;
   font-weight: bold;
-
   background-color: chocolate;
   display: inline;
   text-align: center;
@@ -21,7 +16,7 @@
 }
 
 .delivery-time-container .show-alert {
-  right: -5rem;
+  right: -2rem;
 }
 
 .list-of-delivery-time-items {
@@ -111,7 +106,6 @@ input.date-input {
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin-bottom: 7rem;
-  width: 17rem;
   margin-inline: auto;
 }
 
@@ -165,6 +159,12 @@ input.date-input {
   }
 
   .delivery-time-container .arrows {
-    width: 55rem;
+    width: 56rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .delivery-time-container .arrows {
+    width: 20rem;
   }
 }

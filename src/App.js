@@ -10,6 +10,7 @@ import DeliveryDay from "./components/DeliveryDay";
 import DeliveryTime from "./components/DeliveryTime";
 import DeliveryService from "./components/DeliveryService";
 import Summary from "./components/Summary";
+import GoodBey from "./components/GoodBey";
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
           <Route path="/delivery-time" element={<DeliveryTime />} />
           <Route path="/delivery-service" element={<DeliveryService />} />
           <Route path="/summary" element={<Summary />} />
+          <Route path="/good-bey" element={<GoodBey />} />
         </Routes>
       </Router>
     </div>

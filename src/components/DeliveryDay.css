@@ -30,7 +30,7 @@
   line-height: 5rem;
 }
 
-.alert-hidden {
+.delivery-day-container .alert-hidden {
   right: -5.4rem;
   transition: 1s;
 }

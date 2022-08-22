@@ -1,9 +1,7 @@
 @media only screen and (max-width: 680px) {
   .summary {
     width: auto;
-
-    border: 1px solid blue;
-
+    order: 1px solid blue;
     margin: 0 4rem 0 4rem;
   }
 
@@ -22,5 +20,32 @@
     grid-template-columns: 1fr 2fr 2fr 2fr 2fr;
     gap: 1px;
     border-top: 1px solid rgb(255, 233, 179);
+  }
+}
+
+@media only screen and (max-width: 604px) {
+  .order-total {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 4rem 10rem 4rem;
+  }
+
+  .order-total div {
+    height: auto;
+    line-height: 3rem;
+  }
+
+  .order-total .ot-delivery-service div {
+    width: 13.5rem;
+    margin-inline: auto;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .summary {
+    width: auto;
+    order: 1px solid blue;
+    margin: 0 1rem 0 1rem;
   }
 }

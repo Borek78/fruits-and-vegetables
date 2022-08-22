@@ -22,9 +22,10 @@ const Summary = () => {
   console.log(deliveryTime);
   console.log(deliveryService);
 
-  //set local deliveryService
+  //set local states
 
   //on first render
+
   useEffect(() => {
     const lsItemsList = JSON.parse(localStorage.getItem("itemsList"));
     const lsAddress = JSON.parse(localStorage.getItem("address"));
@@ -43,19 +44,16 @@ const Summary = () => {
 
   //count subTotal + deliveryCosts
   let subTotal = 0;
+  let deliveryCosts = 0;
+
   itemsList.forEach((item) => {
     subTotal += item.totalPrice;
   });
 
-  const deliveryCosts = (subTotal) => {
-    if (subTotal > 100) {
-      return 0;
-    } else {
-      return 35;
-    }
-  };
-
-  console.log(deliveryCosts());
+  if (subTotal <= 100) {
+    deliveryCosts = 35;
+  }
+  console.log(deliveryCosts);
 
   // delete province <div> if no province
   useEffect(() => {
@@ -96,13 +94,6 @@ const Summary = () => {
         <h1>Summary of your order</h1>
 
         <div className="address-and-time">
-          {/* Delivery Time*/}
-          <div className="delivery-time">
-            <div className="delivery-time-heading">Delivery Time</div>
-            <div>{deliveryDay.date + " " + deliveryDay.weekDay}</div>
-            <div>{deliveryTime}</div>
-          </div>
-
           {/* Address*/}
           <div className="delivery-address">
             <div className="heading-delivery-address">Delivery Address</div>
@@ -116,6 +107,13 @@ const Summary = () => {
             <div className="province">{address.province}</div>
             <div>{address.state}</div>
             <div>{address.zipCode}</div>
+          </div>
+
+          {/* Delivery Time*/}
+          <div className="delivery-time">
+            <div className="delivery-time-heading">Delivery Time</div>
+            <div>{deliveryDay.date + " " + deliveryDay.weekDay}</div>
+            <div>{deliveryTime}</div>
           </div>
         </div>
 
@@ -171,19 +169,19 @@ const Summary = () => {
             <div>{subTotal}$</div>
           </div>
 
-          <div>
-            <div> Delivery service: {deliveryService}</div>
+          <div className="ot-delivery-service">
+            <div>Delivery service: {deliveryService}</div>
           </div>
 
           <div>
-            <div>{deliveryCosts()}$</div>
+            <div>{deliveryCosts}$</div>
           </div>
 
           <div className="strong">
             <div>Order Total</div>
           </div>
           <div className="strong">
-            <div>{subTotal + deliveryCosts()}$</div>
+            <div>{subTotal + deliveryCosts}$</div>
           </div>
         </div>
 
@@ -192,7 +190,7 @@ const Summary = () => {
           <Link to={`/delivery-service`}>
             <img src={left} alt="" className="left-arrow" />
           </Link>
-          <Link to={`/summary`} className="link-right-arrow">
+          <Link to={`/good-bey`} className="link-right-arrow">
             <button>Place order</button>
           </Link>
         </div>

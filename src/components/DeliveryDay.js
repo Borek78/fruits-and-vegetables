@@ -39,6 +39,7 @@ const DeliveryDay = () => {
   }, [dispatch, deliveryDay]);
 
   async function noChoice(e) {
+    console.log("sraz");
     const deliveryDayLength = Object.keys(deliveryDay).length;
     console.log(deliveryDayLength);
 

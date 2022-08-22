@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap");
+
+.goodbey-container .best-regards {
+  margin-bottom: 0rem;
+}
+
+.goodbey-container a {
+  text-decoration: none;
+  color: black;
+  border-bottom: 3px dashed green;
+}
+
+.goodbey-container a:hover {
+  border-bottom: 3px dashed chocolate;
+}
+
+.goodbey-letter {
+  margin-bottom: 12rem;
+}
+
+.first-video {
+  margin-bottom: 15rem;
+}
+
+.goodbey-container {
+  width: 60rem;
+  order: 1px solid blue;
+  font-size: 1.8rem;
+  line-height: 2;
+  margin-inline: auto;
+
+  padding-bottom: 8rem;
+  margin-top: 3rem;
+}
+
+.goodbey-container p {
+  margin-bottom: 3rem;
+  text-align: justify;
+}
+
+.goodbey-container p:first-child {
+  font-weight: bolder;
+  margin-bottom: 1rem;
+  color: rgb(218, 70, 16);
+  font-size: 2.1rem;
+}
+
+.goodbey-container img {
+  width: 17rem;
+  float: right;
+  border-radius: 10px;
+  margin-top: 2rem;
+  margin-left: 3rem;
+}
+
+.p-first {
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 660px) {
+  .goodbey-container {
+    width: auto;
+
+    margin: 0 3rem 0 3rem;
+  }
+}
+
+@media only screen and (max-width: 510px) {
+  .goodbey-container {
+    width: auto;
+
+    margin: 0 1.5rem 0 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .goodbey-container img {
+    margin-top: 2rem;
+  }
+}
+
+@media only screen and (max-width: 440px) {
+  .goodbey-container img {
+    float: none;
+    margin-inline: auto;
+    margin-bottom: 4rem;
+    margin-top: 4rem;
+  }
+
+  .img-wrapper {
+    order: 1px solid blue;
+
+    margin-inline: auto;
+
+    display: grid;
+    place-items: center;
+  }
+
+  .goodbey-container p {
+    text-align: left;
+  }
+
+  p:first-child {
+    text-align: center;
+  }
+}
